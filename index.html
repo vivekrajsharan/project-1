@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script type="text/javascript" src="jquery-3.6.0.min.js"></script>
+
+    <title>MySirG</title>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <nav>
+          <ul>
+            <li><a href="/index.html" target="_blank">Home</a></li>
+            <li><a href="/courses.html" target="_blank">Courses</a></li>
+            <li><a href="/about.html" target="_blank">About</a></li>
+            <li><a href="/contact.html" target="_blank">Contact</a></li>
+          </ul>
+        </nav>
+        <img
+          src="https://campustechnology.com/-/media/EDU/CampusTechnology/2019-Images/20191209online.jpg"
+          alt="sirg"
+        />
+        <h1>HOME</h1>
+      </header>
+
+      <section id="main">
+        <p>This is a home page to login into account.</p>
+        <div class="login-form bordered">
+          <form action="/api/login" method="post">
+            <label for="username">Username :</label>
+            <input type="text" name="username" id="username" /> <br />
+            <label for="password">Password :</label>
+            <input type="password" name="password" id="password" /> <br />
+            <input type="checkbox" name="remember me" id="remember" />
+            <label for="remember">Remember me</label> <br />
+            <input type="submit" name="login-button" value="login" />
+            <input type="reset" name="cancel-button" value="cancel" />
+          </form>
+        </div>
+
+        <div id="resultlist">
+          <button id="toggleButton">Hide</button>
+          <div id="results">Her we will display all the courses</div>
+        </div>
+      </section>
+
+      <footer>&copy; this is vivek raj sharan site</footer>
+    </div>
+
+    <script type="text/javascript" src="app.js"></script>
+  </body>
+</html>

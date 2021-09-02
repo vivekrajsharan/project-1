@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>MySirG</title>
+  </head>
+  <body>
+    <header>
+      <img
+        src="https://www.mysirg.com/wp-content/uploads/2017/11/transparent-logo-e1511526767858.png"
+        alt="sirg"
+      />
+      <h1>ABOUT</h1>
+      <nav>
+        <ul>
+          <li><a href="/index.html" target="_blank">Home</a></li>
+          <li><a href="/courses.html" target="_blank">Courses</a></li>
+          <li><a href="/about.html" target="_blank">About</a></li>
+          <li><a href="/contact.html" target="_blank">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+    <section id="main">
+      <p>This is a home page to login into account.</p>
+      <form action="/api/login" method="post">
+        <label for="username">Username :</label>
+        <input type="text" name="username" id="username" /> <br />
+        <label for="password">Password :</label>
+        <input type="password" name="password" id="password" /> <br />
+        <input type="checkbox" name="remember me" id="remember" />
+        <label for="remember">Remember me</label>
+        <input type="submit" name="login-button" />
+        <input type="reset" name="cancel-button" />
+      </form>
+    </section>
+
+    <footer>&copy; this is vivek raj sharan site</footer>
+  </body>
+</html>
