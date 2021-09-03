@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
     <script type="text/javascript" src="jquery-3.6.0.min.js"></script>
+    <script src="server.js"></script>
 
     <title>MySirG</title>
   </head>
@@ -30,7 +31,7 @@
       <section id="main">
         <p>This is a home page to login into account.</p>
         <div class="login-form bordered">
-          <form action="/api/login" method="post">
+          <form action="/api/login" method="post" id="loginform">
             <label for="username">Username :</label>
             <input type="text" name="username" id="username" /> <br />
             <label for="password">Password :</label>
@@ -50,7 +51,8 @@
 
       <footer>&copy; this is vivek raj sharan site</footer>
     </div>
-
-    <script type="text/javascript" src="app.js"></script>
+    <div>
+      <script type="text/javascript" src="app.js"></script>
+    </div>
   </body>
 </html>

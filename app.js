@@ -14,62 +14,63 @@ $(document).ready(function () {
     }
   });
 
-  var results = [
-    {
-      title: "javascipt",
-      instructor: "vivekrajsharan",
-      level: "beginer",
-      total_videos: 10,
-    },
-    {
-      title: "javat",
-      instructor: "vivekrajsharan",
-      level: "beginer",
-      total_videos: 12,
-    },
-    {
-      title: "jc++",
-      instructor: "vivekrajsharan",
-      level: "beginer",
-      total_videos: 18,
-    },
-  ];
+  var results = [];
 
-  resultlist.empty();
+  function displayresult(results) {
+    resultlist.empty();
 
-  $.each(results, function (i, item) {
-    var newresult =
-      "<div class='result'>" +
-      "<div class='title'>" +
-      item.title +
-      "</div> " +
-      " <div>" +
-      "Level 1:" +
-      item.level +
-      "</div> " +
-      " <div>" +
-      "Total videos:" +
-      item.total_videos +
-      "</div> " +
-      " <div>" +
-      "Instructor:" +
-      item.instructor +
-      "</div> " +
-      "</div>";
+    $.each(results, function (i, item) {
+      var newresult = $(
+        "<div class='result'>" +
+          "<div class='title'>" +
+          item.title +
+          "</div> " +
+          " <div>" +
+          "Level 1:" +
+          item.level +
+          "</div> " +
+          " <div>" +
+          "Total videos:" +
+          item.total_videos +
+          "</div> " +
+          " <div>" +
+          "Instructor:" +
+          item.instructor +
+          "</div> " +
+          "</div>"
+      );
 
-    resultlist.append(newresult);
+      resultlist.append(newresult);
 
-    newresult.hover(
-      function () {
-        console.log("hover in");
-        // $(this).css("background-color", "lightgray");
-      },
-      function () {
-        console.log("hover out");
-        //  $(this).css("background-color", "white");
-      }
-    );
+      $(".result").hover(
+        function () {
+          // console.log("hover in");
+          $(this).css("background-color", "lightgray");
+          $(this).css("color", "darkblue");
+          $(this).css("border-color", "blue");
+        },
+        function () {
+          // console.log("hover out");
+          $(this).css("background-color", "transparent");
+          $(this).css("color", "black");
+          $(this).css("border-color", "#999");
+        }
+      );
+    });
+  }
+
+  $("#loginform").on("submit", function () {
+    $.post("/api/login", {}, function (data) {
+      console.log("success ::" + data);
+      displayresult(data);
+    })
+
+      .fall(function (data) {
+        console.log("something bad happened!");
+      })
+      .done(function () {});
   });
+  return false;
 });
 
 /*  var msz = "hello";
