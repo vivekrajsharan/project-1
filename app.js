@@ -1,7 +1,5 @@
 $(document).ready(function () {
   var resultlist = $("#results");
-  resultlist.text("injected by jquerry");
-
   var toggleButton = $("#toggleButton");
   toggleButton.on("click", function () {
     console.log("button clicked");
@@ -18,6 +16,7 @@ $(document).ready(function () {
 
   function displayresult(results) {
     resultlist.empty();
+    resultlist.text("injected by jquerry");
 
     $.each(results, function (i, item) {
       var newresult = $(
@@ -42,6 +41,7 @@ $(document).ready(function () {
 
       resultlist.append(newresult);
 
+      // newresult.hover(
       $(".result").hover(
         function () {
           // console.log("hover in");
@@ -65,12 +65,12 @@ $(document).ready(function () {
       displayresult(data);
     })
 
-      .fall(function (data) {
+      .fail(function (data) {
         console.log("something bad happened!");
       })
       .done(function () {});
+    return false;
   });
-  return false;
 });
 
 /*  var msz = "hello";
